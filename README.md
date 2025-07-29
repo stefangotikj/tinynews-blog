@@ -34,38 +34,20 @@ npm install
 npm run dev
 ```
 
-## 🎨 Example Customizations
+## 🎨 Customization
 
-### Minimal Blog
-```typescript
-export const siteConfig: SiteConfig = {
-  title: "My Blog",
-  logo: "/logo.png",
-  description: "A simple blog about technology.",
-  blogPageTitle: "Blog",
-  blogPageDescription: "Latest posts and updates.",
-  blogPageIcon: BookOpen,
-  features: {
-    enableSearch: false,            // Disable search
-    enableTags: false,              // Disable tags
-    enableRelatedPosts: false,      // Disable related posts
-    enableReadingTime: false,       // Disable reading time
-    enableAuthorInfo: false,        // Disable author info
-    enableSocialSharing: false,     // Disable social sharing
-    enableDarkMode: false,          // Disable dark mode
-    enableBackToTop: false,         // Disable back to top
-  },
-  display: {
-    postsPerPage: 6,                // Show fewer posts
-    showFeaturedPosts: false,       // Hide featured posts
-    showPostDates: false,           // Hide dates
-    showPostAuthors: false,         // Hide authors
-    showPostTags: false,            // Hide tags
-    showPostExcerpts: false,        // Hide excerpts
-  },
-  // ... other settings
-};
-```
+All blog behavior and features can be modified by editing the site-config.ts file.
+
+You can toggle features like:
+
+Enabling/disabling search, tags, reading time, social sharing, dark mode, etc.
+
+Hiding or showing post metadata (authors, dates, excerpts)
+
+Adjusting layout visibility (featured posts, back to top, etc.)
+
+Every configuration value in **site-config.ts** maps directly to how the frontend behaves — no dead settings or magic.
+
 
 ## 🚀 How It Works
 
@@ -75,7 +57,6 @@ Every setting in the configuration file is **actually used** by the components:
 - **`enableTags: false`** → Tag filtering is disabled
 - **`enableDarkMode: false`** → Theme toggle disappears
 - **`showPostDates: false`** → Publication dates are hidden
-- **`postsPerPage: 6`** → Only 6 posts shown per page
 
 ## 📝 Best Practices
 
