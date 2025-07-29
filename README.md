@@ -35,10 +35,9 @@ git clone https://github.com/stefangotikj/tinynews-blog.git
 cd tinynews-starter
 npm install
 npm run dev
-
+```
 ## Documentation
 
 - [Usage Guide](./usage.md) — How to use the Tinynews blog platform.
 - [Contributing](./contributing.md) — Guidelines for contributing to the project.
 - [License](./license.md) — The project license details.
-- [Docs](./docs) — Additional documentation and resources.
