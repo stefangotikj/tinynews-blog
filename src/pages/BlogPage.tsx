@@ -3,6 +3,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { BackToTop } from "@/components/BackToTop";
 import { VirtualizedArticleGrid } from "@/components/VirtualizedArticleGrid";
+import { BlogSearch } from "@/components/BlogSearch";
 import { getAllPosts, BlogPost } from "@/lib/blog";
 import { ArrowRight, BookOpen, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -10,6 +11,7 @@ import { siteConfig } from "../site.config";
 
 const BlogPage = () => {
   const [allPosts, setAllPosts] = useState<BlogPost[]>([]);
+  const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
   const articlesRef = useRef<HTMLDivElement>(null);
 
@@ -19,6 +21,7 @@ const BlogPage = () => {
       try {
         const posts = await getAllPosts();
         setAllPosts(posts);
+        setFilteredPosts(posts); // Initialize filtered posts with all posts
       } catch (error) {
         console.error('Error loading blog data:', error);
       } finally {
@@ -29,12 +32,28 @@ const BlogPage = () => {
     loadData();
   }, []);
 
-  // Memoized featured and non-featured posts
+  // Memoized featured and non-featured posts from filtered results
   const { featuredPosts, nonFeaturedPosts } = useMemo(() => {
-    const featured = allPosts.filter(post => post.featured);
-    const nonFeatured = allPosts.filter(post => !post.featured);
+    const featured = filteredPosts.filter(post => post.featured);
+    const nonFeatured = filteredPosts.filter(post => !post.featured);
     return { featuredPosts: featured, nonFeaturedPosts: nonFeatured };
+  }, [filteredPosts]);
+
+  // Get all unique tags for search filters
+  const allTags = useMemo(() => {
+    const tags = new Set<string>();
+    allPosts.forEach(post => {
+      if (post.tags && Array.isArray(post.tags)) {
+        post.tags.forEach(tag => tags.add(tag));
+      }
+    });
+    return Array.from(tags).sort();
   }, [allPosts]);
+
+  // Handle search results update
+  const handleFilteredPostsChange = useCallback((posts: BlogPost[]) => {
+    setFilteredPosts(posts);
+  }, []);
 
   if (loading) {
     return (
@@ -72,13 +91,24 @@ const BlogPage = () => {
             <div className="flex justify-center items-center gap-6 mb-4">
               <div className="flex items-center gap-2 text-muted-foreground">
                 <Sparkles className="h-4 w-4 text-accent" />
-                <span>{allPosts.length} {allPosts.length === 1 ? 'Article' : 'Articles'}</span>
+                <span>{filteredPosts.length} of {allPosts.length} {allPosts.length === 1 ? 'Article' : 'Articles'}</span>
               </div>
             </div>
             {/* Decorative Divider */}
             <div className="flex justify-center">
               <span className="block w-24 h-0.5 rounded-full bg-gradient-to-r from-accent/40 via-accent to-accent/40 opacity-70" />
             </div>
+          </div>
+        </section>
+
+        {/* Search Section */}
+        <section className="py-6 px-6 sm:px-8 bg-gradient-to-br from-secondary/10 to-background">
+          <div className="max-w-7xl mx-auto">
+            <BlogSearch 
+              posts={allPosts}
+              onFilteredPostsChange={handleFilteredPostsChange}
+              allTags={allTags}
+            />
           </div>
         </section>
 
@@ -116,7 +146,10 @@ const BlogPage = () => {
                 <BookOpen className="h-12 w-12 text-muted-foreground mx-auto mb-3" />
                 <h3 className="text-lg font-semibold mb-2">No articles found</h3>
                 <p className="text-muted-foreground mb-4">
-                  No articles match your criteria.
+                  {filteredPosts.length === 0 && allPosts.length > 0 
+                    ? "No articles match your search criteria. Try adjusting your filters."
+                    : "No articles match your criteria."
+                  }
                 </p>
               </div>
             )}
