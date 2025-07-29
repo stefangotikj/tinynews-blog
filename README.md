@@ -2,10 +2,7 @@
 
 # 📰 Tinynews
 
-> The Modern, Minimal Blog System for Makers & Teams
-
-A simple, YAML-powered blog system built with React, TypeScript and YAML!  
-No database. No CMS. No complexity — just pure simplicity.
+<img width="1033" height="315" alt="image" src="https://github.com/user-attachments/assets/62736e04-7f0b-48d2-b1cf-b47747f1644b" />
 
 [🔗 Live Demo](https://tinynews.site/blog)  
 
