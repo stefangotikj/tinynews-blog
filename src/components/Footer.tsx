@@ -8,7 +8,7 @@ export function Footer() {
       <div className="mb-2 font-semibold text-accent">Tinynews</div>
       <div className="mb-2">Built with Tinynews &middot; Open source YAML-powered blog system</div>
       <div>
-        &copy; {new Date().getFullYear()} Tinynews &middot; <a href="https://github.com/thetinynews/tinynews" target="_blank" rel="noopener noreferrer" className="underline hover:text-accent">GitHub</a>
+        &copy; {new Date().getFullYear()} Tinynews &middot; <a href="https://github.com/stefangotikj/tinynews-blog" target="_blank" rel="noopener noreferrer" className="underline hover:text-accent">GitHub</a>
       </div>
     </footer>
   );
