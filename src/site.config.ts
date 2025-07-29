@@ -31,6 +31,8 @@ export interface SiteConfig {
   
   // ===== FEATURE TOGGLES =====
   features: {
+    
+    enableDarkMode: any;
     enableSearch: boolean;          // Enable/disable search functionality
     enableTags: boolean;            // Enable/disable tag filtering
     enableRelatedPosts: boolean;    // Show related posts on blog post pages
@@ -90,11 +92,12 @@ export const siteConfig: SiteConfig = {
   
   // ===== FEATURE TOGGLES =====
   features: {
-    enableSearch: true,             // Set to false to completely disable search
-    enableTags: true,               // Set to false to hide tag filtering
-    enableRelatedPosts: true,       // Set to false to hide related posts
-    enableReadingTime: true,        // Set to false to hide reading time
-    enableBackToTop: true,          // Set to false to hide back to top button
+    enableSearch: true, // Set to false to completely disable search
+    enableTags: true, // Set to false to hide tag filtering
+    enableRelatedPosts: true, // Set to false to hide related posts
+    enableReadingTime: true, // Set to false to hide reading time
+    enableBackToTop: true,
+    enableDarkMode: undefined
   },
   
   // ===== DISPLAY SETTINGS =====
