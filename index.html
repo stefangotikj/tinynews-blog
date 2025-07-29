@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';" />
+
+    <!-- Force dark mode immediately -->
+    <script>
+      document.documentElement.classList.add('dark');
+    </script>
+
+    <!-- Primary Meta Tags -->
+    <title>Tinynews – YAML-Powered Blog</title>
+    <meta name="title" content="Tinynews – YAML-Powered Blogging" />
+    <meta name="description" content="A lightweight, developer-friendly blogging system powered by YAML and Markdown. No CMS, no databases — just code and content." />
+    <meta name="keywords" content="tinynews, yaml blog, markdown blog, static blog, blogging system, vite, react, tailwind" />
+    <meta name="author" content="Tinynews Team" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tinynews.site/" />
+    <meta property="og:title" content="Tinynews – YAML-Powered Blogging" />
+    <meta property="og:description" content="A lightweight, developer-friendly blogging system powered by YAML and Markdown." />
+    <meta property="og:image" content="https://tinynews.site/og-image.png" />
+    <meta property="og:site_name" content="Tinynews" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://tinynews.site/" />
+    <meta property="twitter:title" content="Tinynews – YAML-Powered Blogging" />
+    <meta property="twitter:description" content="A lightweight, developer-friendly blogging system powered by YAML and Markdown." />
+    <meta property="twitter:image" content="https://tinynews.site/og-image.png" />
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="msapplication-TileColor" content="#0f172a" />
+    <link rel="canonical" href="tinynews.site/" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- Cronitor RUM -->
+<script async src="https://rum.cronitor.io/script.js"></script>
+<script>
+    window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
+    cronitor('config', { clientKey: 'a889c77edb9ea6372678a6bf464624d4' });
+</script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+id: getting-started-with-tinynews
+slug: getting-started-with-tinynews
+featured: true
+title: Getting Started with Tinynews
+excerpt: Learn how to create your first blog post and customize your new Tinynews blog in just a few minutes.
+author: Tinynews Team
+date: 2024-07-15
+tags:
+  - getting-started
+  - tutorial
+  - yaml
+  - markdown
+readTime: 7 min
+content: |
+  # Getting Started with Tinynews
+
+  Welcome to **Tinynews**! You've just cloned one of the simplest yet most powerful blog systems available. This post will walk you through everything you need to know to get your blog up and running.
+
+  ## What Makes Tinynews Different?
+
+  Unlike traditional blog platforms that require databases, complex CMSs, or vendor lock-in, Tinynews takes a refreshingly simple approach:
+
+  - **YAML-powered content** - Each blog post is a simple YAML file
+  - **Markdown for writing** - Write your content in familiar Markdown syntax
+  - **Git-based workflow** - Version control your content alongside your code
+  - **Static generation** - Lightning-fast loading with no server dependencies
+
+  ## Creating Your First Post
+
+  Creating a new blog post is as simple as adding a new YAML file to the `src/blog-posts/` directory. Here's the basic structure:
+
+  ```yaml
+  id: my-awesome-post
+  slug: my-awesome-post
+  featured: false
+  title: My Awesome Post
+  excerpt: A brief description of what this post covers.
+  author: Your Name
+  date: 2024-07-15
+  tags:
+    - example
+    - tutorial
+  readTime: 5 min
+  content: |
+    # Your Content Here
+    
+    Write your blog post content using **Markdown** syntax.
