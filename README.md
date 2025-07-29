@@ -29,7 +29,7 @@
 👉 Use [**tinynews-blog**](https://github.com/stefangotikj/tinynews-blog.git) for a stripped-down, blog-only setup:
 ```bash
 git clone https://github.com/stefangotikj/tinynews-blog.git
-cd tinynews-starter
+cd tinynews
 npm install
 npm run dev
 ```
