@@ -2,6 +2,7 @@ import { memo } from 'react';
 import { Calendar, Clock, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { BlogPost } from '@/lib/blog';
+import { siteConfig } from '@/site.config';
 
 interface ArticleCardProps {
   post: BlogPost;
@@ -44,15 +45,25 @@ export const ArticleCard = memo(({ post, isFeatured = false }: ArticleCardProps)
         
         {/* Meta Info */}
         <div className="flex items-center text-xs text-muted-foreground mb-4">
-          <Calendar className="h-3.5 w-3.5 mr-1" />
-          {formatDate(post.date)}
-          <span className="mx-1.5">•</span>
-          <Clock className="h-3.5 w-3.5 mr-1" />
-          {post.readTime}
+          {siteConfig.display.showPostDates && (
+            <>
+              <Calendar className="h-3.5 w-3.5 mr-1" />
+              {formatDate(post.date)}
+            </>
+          )}
+          {siteConfig.display.showPostDates && siteConfig.features.enableReadingTime && (
+            <span className="mx-1.5">•</span>
+          )}
+          {siteConfig.features.enableReadingTime && (
+            <>
+              <Clock className="h-3.5 w-3.5 mr-1" />
+              {post.readTime}
+            </>
+          )}
         </div>
         
         {/* Tags */}
-        {post.tags && post.tags.length > 0 && (
+        {siteConfig.display.showPostTags && post.tags && post.tags.length > 0 && (
           <div className="flex flex-wrap gap-1.5 mb-4">
             {post.tags.slice(0, 2).map(tag => (
               <span 
@@ -71,7 +82,9 @@ export const ArticleCard = memo(({ post, isFeatured = false }: ArticleCardProps)
         
         {/* Read More Link */}
         <div className="flex items-center justify-between pt-2 border-t border-border/50">
-          <span className="text-xs text-muted-foreground">By {post.author}</span>
+          {siteConfig.display.showPostAuthors && (
+            <span className="text-xs text-muted-foreground">By {post.author}</span>
+          )}
           <Link 
             to={`/blog/${post.id}`}
             className="inline-flex items-center gap-1 text-xs font-medium text-accent hover:text-accent/80 transition-colors"

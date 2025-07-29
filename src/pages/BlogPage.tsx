@@ -101,19 +101,21 @@ const BlogPage = () => {
           </div>
         </section>
 
-        {/* Search Section */}
-        <section className="py-6 px-6 sm:px-8 bg-gradient-to-br from-secondary/10 to-background">
-          <div className="max-w-7xl mx-auto">
-            <BlogSearch 
-              posts={allPosts}
-              onFilteredPostsChange={handleFilteredPostsChange}
-              allTags={allTags}
-            />
-          </div>
-        </section>
+        {/* Search Section - Only show if enabled */}
+        {siteConfig.features.enableSearch && (
+          <section className="py-6 px-6 sm:px-8 bg-gradient-to-br from-secondary/10 to-background">
+            <div className="max-w-7xl mx-auto">
+              <BlogSearch 
+                posts={allPosts}
+                onFilteredPostsChange={handleFilteredPostsChange}
+                allTags={allTags}
+              />
+            </div>
+          </section>
+        )}
 
-        {/* Featured Articles Section - More Compact */}
-        {featuredPosts.length > 0 && (
+        {/* Featured Articles Section - Only show if enabled */}
+        {siteConfig.display.showFeaturedPosts && featuredPosts.length > 0 && (
           <section className="py-6 px-6 sm:px-8 bg-gradient-to-br from-background via-secondary/10 to-background">
             <div className="max-w-7xl mx-auto">
               <h2 className="text-xl font-bold mb-4 text-accent text-center">Featured Articles</h2>
@@ -135,12 +137,12 @@ const BlogPage = () => {
             </h2>
             
             {nonFeaturedPosts.length > 0 ? (
-              <VirtualizedArticleGrid 
-                posts={nonFeaturedPosts} 
-                isFeatured={false}
-                itemsPerPage={12}
-                showEndMessage={true}
-              />
+                          <VirtualizedArticleGrid 
+              posts={nonFeaturedPosts} 
+              isFeatured={false}
+              itemsPerPage={siteConfig.display.postsPerPage}
+              showEndMessage={true}
+            />
             ) : (
               <div className="text-center py-12">
                 <BookOpen className="h-12 w-12 text-muted-foreground mx-auto mb-3" />
@@ -177,7 +179,7 @@ const BlogPage = () => {
         )}
       </main>
       <Footer />
-      <BackToTop />
+      {siteConfig.features.enableBackToTop && <BackToTop />}
     </div>
   );
 };

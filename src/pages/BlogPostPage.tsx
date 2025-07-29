@@ -6,6 +6,7 @@ import { BackToTop } from "@/components/BackToTop";
 import { getPostById, getAllPosts, BlogPost } from "@/lib/blog";
 import { Calendar, Clock, ArrowLeft, Tag } from "lucide-react";
 import ReactMarkdown from 'react-markdown';
+import { siteConfig } from "@/site.config";
 
 const BlogPostPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -36,11 +37,13 @@ const BlogPostPage = () => {
 
         setPost(currentPost);
 
-        // Get related posts (same tags, excluding current post)
-        const related = allPosts
-          .filter(p => p.id !== id && Array.isArray(p.tags) && Array.isArray(currentPost.tags) && p.tags.some(tag => currentPost.tags.includes(tag)))
-          .slice(0, 3);
-        setRelatedPosts(related);
+        // Get related posts (same tags, excluding current post) - only if enabled
+        if (siteConfig.features.enableRelatedPosts) {
+          const related = allPosts
+            .filter(p => p.id !== id && Array.isArray(p.tags) && Array.isArray(currentPost.tags) && p.tags.some(tag => currentPost.tags.includes(tag)))
+            .slice(0, 3);
+          setRelatedPosts(related);
+        }
       } catch (error) {
         console.error('Error loading blog post:', error);
         navigate('/blog');
@@ -113,26 +116,30 @@ const BlogPostPage = () => {
 
             {/* Meta Information */}
             <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-muted-foreground mb-4 sm:mb-6">
-              {post.author && (
+              {siteConfig.display.showPostAuthors && post.author && (
                 <div className="flex items-center gap-2">
                   <span className="bg-accent/20 rounded-full px-2 py-1 text-accent font-semibold">By</span>
                   <span className="font-medium text-foreground">{post.author}</span>
                 </div>
               )}
-              <div className="flex items-center gap-2">
-                <span className="bg-accent/20 rounded-full p-1"><Calendar className="h-4 w-4 text-accent" /></span>
-                <span>{formatDate(post.date)}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="bg-accent/20 rounded-full p-1"><Clock className="h-4 w-4 text-accent" /></span>
-                <span>{post.readTime}</span>
-              </div>
+              {siteConfig.display.showPostDates && (
+                <div className="flex items-center gap-2">
+                  <span className="bg-accent/20 rounded-full p-1"><Calendar className="h-4 w-4 text-accent" /></span>
+                  <span>{formatDate(post.date)}</span>
+                </div>
+              )}
+              {siteConfig.features.enableReadingTime && (
+                <div className="flex items-center gap-2">
+                  <span className="bg-accent/20 rounded-full p-1"><Clock className="h-4 w-4 text-accent" /></span>
+                  <span>{post.readTime}</span>
+                </div>
+              )}
             </div>
            {/* Divider */}
            <div className="w-full h-1 bg-gradient-to-r from-accent/30 via-accent/60 to-accent/30 rounded-full mb-6 opacity-60" />
 
             {/* Tags */}
-            {post.tags && post.tags.length > 0 && (
+            {siteConfig.display.showPostTags && post.tags && post.tags.length > 0 && (
               <div className="flex items-center gap-2 mb-6 sm:mb-8">
                 <Tag className="h-4 w-4 text-muted-foreground" />
                 <div className="flex flex-wrap gap-2">
@@ -239,7 +246,7 @@ const BlogPostPage = () => {
         </section>
 
         {/* Related Posts */}
-        {relatedPosts.length > 0 && (
+        {siteConfig.features.enableRelatedPosts && relatedPosts.length > 0 && (
           <section className="py-10 sm:py-16 md:py-20 px-4 sm:px-8 bg-gradient-to-br from-secondary/10 to-background">
             <div className="max-w-7xl mx-auto">
               <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center">
@@ -282,7 +289,7 @@ const BlogPostPage = () => {
         )}
       </main>
       <Footer />
-      <BackToTop />
+      {siteConfig.features.enableBackToTop && <BackToTop />}
     </div>
   );
 };
