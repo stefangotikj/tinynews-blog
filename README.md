@@ -36,8 +36,9 @@ cd tinynews-starter
 npm install
 npm run dev
 ```
-## Documentation
 
-- [Usage Guide](./usage.md) — How to use the Tinynews blog platform.
-- [Contributing](./contributing.md) — Guidelines for contributing to the project.
-- [License](./license.md) — The project license details.
+## 📚 Documentation
+
+- [Usage Guide](./docs/usage.md) — How to use the Tinynews blog platform.
+- [Contributing](./docs/contributing.md) — Guidelines for contributing to the project.
+- [License](./docs/license.md) — The project license details.
