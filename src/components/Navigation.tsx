@@ -43,13 +43,7 @@ export function Navigation() {
           {/* No additional desktop navigation needed */}
           
           {/* Mobile Hamburger */}
-          <button
-            className="md:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-accent"
-            onClick={() => setDrawerOpen(true)}
-            aria-label="Open menu"
-          >
-            <Menu className="h-6 w-6 text-foreground" />
-          </button>
+          {/* Remove the mobile hamburger menu button */}
         </div>
       </div>
       
