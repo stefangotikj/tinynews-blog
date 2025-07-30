@@ -50,14 +50,31 @@ export function Footer() {
   Thank you for respecting the effort that went into Tinynews.
 */}
 
-      <div>
-        {siteConfig.footer.copyrightText}
-        {siteConfig.footer && (
-          <>
-            &middot; Built with <a href="https://github.com/stefangotikj/tinynews-blog" target="_blank" rel="noopener noreferrer" className="underline hover:text-accent">Tinynews</a>
-          </>
-        )}
-      </div>
+<div>
+  {siteConfig.footer.copyrightText}
+  {siteConfig.footer && (
+    <>
+      {" · "}Built with{" "}
+      <a
+        href="https://github.com/stefangotikj/tinynews-blog"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline hover:text-accent"
+      >
+        Tinynews
+      </a>
+      {" · "}
+      <a
+        href="https://status.tinynews.site"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline hover:text-accent"
+      >
+        Status Page
+      </a>
+    </>
+  )}
+</div>
     </footer>
   );
 }
