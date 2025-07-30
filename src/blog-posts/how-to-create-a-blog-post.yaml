@@ -1,0 +1,58 @@
+id: how-to-create-a-blog-post
+slug: how-to-create-a-blog-post
+featured: true
+title: How to Create a New Blog Post.
+excerpt: Step-by-step guide to writing and publishing your first blog post using YAML and Markdown.
+author: Tinynews Team
+date: 2024-07-16
+tags:
+  - tutorial
+  - getting-started
+  - yaml
+  - markdown
+readTime: 5 min
+content: |
+  # How to Create a New Blog Post in Tinynews
+
+  Creating a new post in Tinynews is as easy as adding a YAML file to the `src/blog-posts/` directory.
+
+  ## 1. Copy an Existing Post
+
+  Use one of the sample files (like `getting-started-tinynews.yaml`) as a template.
+
+  ## 2. Fill in the Fields
+
+  - `id`: A unique identifier (e.g., `my-first-post`)
+  - `slug`: The URL path (e.g., `my-first-post`)
+  - `title`: Your post’s title
+  - `excerpt`: A short summary
+  - `author`: Your name
+  - `date`: Today’s date (YYYY-MM-DD)
+  - `tags`: A list of relevant tags
+  - `readTime`: Estimated reading time (e.g., `4 min`)
+  - `content`: Your post, written in Markdown
+
+  ## 3. Write Your Content
+
+  Use Markdown for formatting. You can add headings, lists, images, and code blocks.
+
+  ## 4. Save and Commit
+
+  Save your file, commit it to git, and your post will appear on your blog!
+
+  ```yaml
+  id: my-first-post
+  slug: my-first-post
+  featured: false
+  title: My First Post
+  excerpt: This is my first post on Tinynews!
+  author: Your Name
+  date: 2024-07-16
+  tags:
+    - introduction
+    - example
+  readTime: 3 min
+  content: |
+    # Welcome!
+    This is my first post using Tinynews.
+  ```
