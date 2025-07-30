@@ -32,7 +32,7 @@ For detailed documentation, see the [`docs`](docs/) directory.
 👉 Use [**tinynews-blog**](https://github.com/stefangotikj/tinynews-blog.git):
 ```bash
 git clone https://github.com/stefangotikj/tinynews-blog.git
-cd tinynews
+cd tinynews-blog
 npm install
 npm run dev
 ```
