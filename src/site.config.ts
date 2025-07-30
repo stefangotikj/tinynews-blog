@@ -32,7 +32,6 @@ export interface SiteConfig {
   // ===== FEATURE TOGGLES =====
   features: {
     
-    enableDarkMode: any;
     enableSearch: boolean;          // Enable/disable search functionality
     enableTags: boolean;            // Enable/disable tag filtering
     enableRelatedPosts: boolean;    // Show related posts on blog post pages
@@ -68,23 +67,23 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   // ===== BASIC SITE INFORMATION =====
-  title: "My Awesome Blog",
+  title: "Tinynews Blog",
   logo: "/favicon.png",
-  description: "Insights, tutorials, and stories from a curious mind. Join me on my journey through tech, life, and creativity!",
+  description: "Insights, tutorials, and updates from Tiny News. Join us to make blogging easier!",
   
   // ===== BLOG PAGE CONFIGURATION =====
-  blogPageTitle: "News",
-  blogPageDescription: "Welcome to my blog! Here you'll find thoughts, guides, and inspiration on web development, design, and more.",
+  blogPageTitle: "Updates",
+  blogPageDescription: "Welcome to Tiny News! Here you'll find updates, guides, and tips from the Tiny News team.",
   blogPageIcon: BookOpen,
   
   // ===== SEO CONFIGURATION =====
   seo: {
-    defaultTitle: "My Awesome Blog - Insights and Tutorials",
-    defaultDescription: "A personal blog sharing insights, tutorials, and stories about technology, development, and creativity.",
+    defaultTitle: "Tiny News Blog",
+    defaultDescription: "Insights, tutorials, and updates from Tiny News. Join us to make blogging easier!",
     keywords: ["blog", "technology", "development", "tutorials", "insights", "web development"],
     author: "Your Name",
     language: "en",
-    siteUrl: "https://yourdomain.com",
+    siteUrl: "https://blog.tinynews.site",
     ogImage: "/og-image.png",
     twitterImage: "/twitter-image.png",
     favicon: "/favicon.png",
@@ -93,36 +92,35 @@ export const siteConfig: SiteConfig = {
   // ===== FEATURE TOGGLES =====
   features: {
     enableSearch: true, // Set to false to completely disable search
-    enableTags: true, // Set to false to hide tag filtering
-    enableRelatedPosts: true, // Set to false to hide related posts
-    enableReadingTime: true, // Set to false to hide reading time
+    enableTags: false, // Set to false to hide tag filtering
+    enableRelatedPosts: false, // Set to false to hide related posts
+    enableReadingTime: false, // Set to false to hide reading time
     enableBackToTop: true,
-    enableDarkMode: undefined
   },
   
   // ===== DISPLAY SETTINGS =====
   display: {
     showFeaturedPosts: true,        // Set to false to hide featured posts section **IMPORTANT**: Remove featured posts from the blog page if set to false
-    showPostDates: true,            // Set to false to hide publication dates
-    showPostAuthors: true,          // Set to false to hide author names
-    showPostTags: true,             // Set to false to hide post tags
+    showPostDates: false,            // Set to false to hide publication dates
+    showPostAuthors: false,          // Set to false to hide author names
+    showPostTags: false,             // Set to false to hide post tags
     showPostExcerpts: true,         // Set to false to hide post excerpts
   },
   
   // ===== SOCIAL MEDIA LINKS =====
   // Remove or comment out any platforms you don't use
   social: {
-    twitter: "https://twitter.com/yourusername",
+   // twitter: "https://twitter.com/yourusername",
     github: "https://github.com/stefangotikj/tinynews-blog",
-    linkedin: "https://linkedin.com/in/yourusername",
+   // linkedin: "https://linkedin.com/in/yourusername",
     youtube: "https://youtube.com/@yourchannel",
-    instagram: "https://instagram.com/yourusername",
-    facebook: "https://facebook.com/yourpage",
+    instagram: "https://instagram.com/tinynews.site",
+    // facebook: "https://facebook.com/yourpage",
   },
   
   // ===== FOOTER CONFIGURATION =====
   footer: {
     showSocialLinks: true,          // Set to false to hide social links in footer
-    copyrightText: "© 2024 My Awesome Blog. All rights reserved.",
+    copyrightText: "© 2025 Tiny News Blog. All rights reserved.",
   },
 }; 
