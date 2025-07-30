@@ -1,0 +1,54 @@
+id: welcome-to-tinynews
+slug: welcome-to-tinynews
+featured: true
+title: Welcome to Tinynews 📰
+excerpt: Introducing Tinynews — the lightweight, markdown-powered blogging platform for hackers, builders, and indie makers.
+author: Tinynews Team
+date: 2024-07-01
+tags:
+  - announcement
+  - welcome
+  - static-site
+  - markdown
+  - open-source
+readTime: 4 min
+content: |
+  # Welcome to Tinynews 📰
+
+  We're thrilled to have you here!
+
+  **Tinynews** is a minimal blogging system built for developers and creators who prefer writing in Markdown and keeping full control over their content. Whether you're starting a personal blog, documenting a project, or sharing tutorials — Tinynews has you covered.
+
+  ## Why We Built Tinynews
+
+  In a world full of bloated CMSs and platform lock-in, we wanted to build something different:
+  
+  - **Zero dependencies** — no database, no backend, no fuss.
+  - **Markdown-first** — content is easy to write, version, and maintain.
+  - **Static by default** — everything compiles into a blazing-fast site.
+  - **Editable by you** — powered by YAML frontmatter, Markdown content, and Git.
+
+  You write posts like this one in a single `.yaml` file — no plugins, no proprietary editor.
+
+  ## Who Is It For?
+
+  Tinynews is made for:
+  
+  - Indie hackers and startup teams looking for a quick blog setup
+  - Developers who want full control without spinning up a CMS
+  - Anyone who values **portability**, **simplicity**, and **open-source ethos**
+
+  ## What's Next?
+
+  To get started:
+  
+  1. Fork the Tinynews repo or clone your own
+  2. Navigate to `src/blog-posts/`
+  3. Add your first `.yaml` post
+  4. Deploy via [Netlify](https://www.netlify.com/) or [Vercel](https://vercel.com/)
+
+  We're just getting started, and we hope Tinynews helps you tell your story — your way.
+
+  Stay tuned for more updates!
+
+  — **The Tinynews Team**
