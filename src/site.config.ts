@@ -69,19 +69,30 @@ export const siteConfig: SiteConfig = {
   // ===== BASIC SITE INFORMATION =====
   title: "Tinynews Blog",
   logo: "/favicon.png",
-  description: "Insights, tutorials, and updates from Tiny News. Join us to make blogging easier!",
-  
+  description: "Insights, tutorials, and updates from the team behind Tinynews. Discover how we're building the future of simple, powerful publishing.",  
+
   // ===== BLOG PAGE CONFIGURATION =====
-  blogPageTitle: "Updates",
-  blogPageDescription: "Welcome to Tiny News! Here you'll find updates, guides, and tips from the Tiny News team.",
+  blogPageTitle: "Latest from Tiny News",
+  blogPageDescription: "Tips, guides, and updates straight from the Tinynews team — everything you need to build smarter blogs and websites.",
   blogPageIcon: BookOpen,
   
   // ===== SEO CONFIGURATION =====
   seo: {
     defaultTitle: "Tiny News Blog",
-    defaultDescription: "Insights, tutorials, and updates from Tiny News. Join us to make blogging easier!",
-    keywords: ["blog", "technology", "development", "tutorials", "insights", "web development"],
-    author: "Your Name",
+    defaultDescription: "Insights, tutorials, and updates from the team behind Tinynews. Discover how we're building the future of simple, powerful publishing.",
+  keywords: [
+    "tinynews", 
+    "blog",
+    "blogging platform",
+    "open source blog",
+    "static site generator",
+    "web development",
+    "tutorials",
+    "insights",
+    "content creation"
+  ],
+
+    author: "Tinynews Team",
     language: "en",
     siteUrl: "https://blog.tinynews.site",
     ogImage: "/og-image.png",
