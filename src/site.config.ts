@@ -121,12 +121,12 @@ export const siteConfig: SiteConfig = {
   // ===== SOCIAL MEDIA LINKS =====
   // Remove or comment out any platforms you don't use
   social: {
-   // twitter: "https://twitter.com/yourusername",
-    github: "https://github.com/stefangotikj/tinynews-blog",
-   // linkedin: "https://linkedin.com/in/yourusername",
-    youtube: "https://youtube.com/@yourchannel",
-    instagram: "https://instagram.com/tinynews.site",
-    // facebook: "https://facebook.com/yourpage",
+  //twitter: "https://twitter.com/yourusername",
+  github: "https://github.com/stefangotikj/tinynews-blog",
+  //linkedin: "https://linkedin.com/in/yourusername",
+  //youtube: "https://youtube.com/@yourchannel",
+  instagram: "https://instagram.com/tinynews.site",
+  //facebook: "https://facebook.com/yourpage",
   },
   
   // ===== FOOTER CONFIGURATION =====
