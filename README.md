@@ -23,7 +23,7 @@
 
 ## 📖 Documentation
 
-For detailed documentation on customization and usage, please refer to the [DOCS](DOCS) directory.
+For detailed documentation, see the [`docs`](docs/) directory.
 
 ## 🚀 Quick Start
 
