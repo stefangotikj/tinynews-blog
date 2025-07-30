@@ -1,0 +1,144 @@
+id: customizing-tinynews-site-config
+slug: customizing-tinynews-site-config
+featured: false
+title: Customizing Tinynews with site-config.ts
+excerpt: Learn how to fully personalize your Tinynews blog using the powerful site-config.ts configuration file.
+author: Tinynews Team
+date: 2024-07-20
+tags:
+  - customization
+  - typescript
+  - configuration
+  - static-site
+  - developer-tools
+readTime: 6 min
+content: |
+  # Customizing Tinynews with `site-config.ts`
+
+  One of the best parts of Tinynews is how easy it is to configure. Everything about your blog's look, behavior, and metadata is centralized inside a single file: `site-config.ts`.
+
+  Let's walk through each section and explore what it does and how you can tweak it to match your brand or personality.
+
+  ## 🏷️ Basic Site Info
+
+  This section controls your blog's identity — things like the title, logo, and general description.
+
+  ```ts
+  title: "My Awesome Blog"
+  logo: "/favicon.png"
+  description: "Insights, tutorials, and stories from a curious mind."
+  ```
+
+  * `title` appears in your browser tab and navigation.
+  * `logo` points to an image inside your `/public` directory.
+  * `description` is used for SEO and social previews.
+  
+  ## 📰 Blog Page Configuration
+  
+  Customize the header on your `/blog` page.
+
+  ```ts
+  blogPageTitle: "News"
+  blogPageDescription: "Welcome to my blog! Here you'll find thoughts, guides, and inspiration on web development, design, and more."
+  blogPageIcon: BookOpen
+  ```
+
+  * Choose a `Lucide` icon or bring your own.
+  * This defines how your blog looks to new visitors.
+
+  ## 🔍 SEO Settings
+
+  These values help search engines and social media platforms understand and preview your site.
+
+  ```ts
+  seo: {
+    defaultTitle: "My Awesome Blog - Insights and Tutorials",
+    defaultDescription: "A personal blog sharing insights, tutorials, and stories about technology, development, and creativity.",
+    keywords: ["blog", "technology", "development", "tutorials", "insights", "web development"],
+    author: "Your Name",
+    language: "en",
+    siteUrl: "https://yourdomain.com",
+    ogImage: "/og-image.png",
+    twitterImage: "/twitter-image.png",
+    favicon: "/favicon.png",
+  }
+  ```
+
+  * These values are injected into your HTML `<head>` automatically.
+  * Be sure your images are stored in `/public` and sized correctly for social sharing (e.g., 1200x630px).
+
+  ## 🧪 Feature Toggles
+
+  Want to turn off search? Hide reading time? Easy.
+
+  ```ts
+  features: {
+    enableSearch: true,
+    enableTags: true,
+    enableRelatedPosts: true,
+    enableReadingTime: true,
+    enableBackToTop: true,
+    enableDarkMode: undefined
+  }
+  ```
+
+  Set any of these to `false` to disable the feature site-wide.
+
+  ## 🎨 Display Settings
+
+  Control how much metadata shows on each post preview.
+
+  ```ts
+  display: {
+    showFeaturedPosts: true,
+    showPostDates: true,
+    showPostAuthors: true,
+    showPostTags: true,
+    showPostExcerpts: true,
+  }
+  ```
+
+  * Turn off tags or author names if you prefer a cleaner UI.
+  * `showFeaturedPosts` enables a special featured posts section on your homepage.
+
+  ## 🌐 Social Media Links
+
+  Your blog can link directly to your profiles:
+
+  ```ts
+  social: {
+    twitter: "https://twitter.com/yourusername",
+    github: "https://github.com/stefangotikj/tinynews-blog",
+    linkedin: "https://linkedin.com/in/yourusername",
+    youtube: "https://youtube.com/@yourchannel",
+    instagram: "https://instagram.com/yourusername",
+    facebook: "https://facebook.com/yourpage",
+  }
+  ```
+
+  Remove or comment out platforms you don't use. These links appear in your footer and author cards.
+
+  ## 🦶 Footer Settings
+
+  Personalize the bottom of your site.
+
+  ```ts
+  footer: {
+    showSocialLinks: true,
+    copyrightText: "© 2024 My Awesome Blog. All rights reserved.",
+  }
+  ```
+
+  Keep it minimal, or make it your brand statement.
+
+  ## 💡 Pro Tip
+
+  Since `site-config.ts` is just a TypeScript file, you can compute values dynamically or import constants from other files. Want to centralize SEO keywords or add multi-language support? Totally possible.
+
+  ## 🚀 Final Words
+
+  Tinynews was designed with configurability in mind — no clunky CMS, no hidden settings. Your blog is just code and content, side-by-side.
+
+  So go ahead, tweak, theme, rebrand — and share your voice with the world.
+
+  — **Tinynews Team**

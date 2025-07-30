@@ -1,0 +1,196 @@
+id: writing-blogs-with-yaml-markdown
+slug: writing-blogs-with-yaml-markdown
+featured: false
+title: Writing Blog Posts with YAML and Markdown
+excerpt: Learn how to create beautiful blog posts using YAML files with Markdown content in your headless CMS.
+author: Blog Team
+date: 2024-07-30
+tags:
+  - yaml
+  - markdown
+  - blogging
+  - cms
+  - writing
+readTime: 5 min
+content: |
+  # Writing Blog Posts with YAML and Markdown
+
+  Creating blog posts with our headless CMS is simple - just create a YAML file in your `src/blog-posts` folder and write your content in Markdown. Here's everything you need to know.
+
+  ## 📁 Basic File Structure
+
+  Each blog post is a single `.yaml` file with this structure:
+
+  ```yaml
+  id: my-first-post
+  slug: my-first-post
+  title: My First Blog Post
+  excerpt: A short description of what this post is about
+  author: Your Name
+  date: 2024-07-30
+  tags:
+    - blogging
+    - tutorial
+  readTime: 3 min
+  content: |
+    # Your Markdown content goes here
+    
+    Write your blog post using **Markdown** formatting!
+  ```
+
+  ## ✏️ Essential Markdown for Blogging
+
+  ### Headers
+  ```markdown
+  # Main Title (H1)
+  ## Section Header (H2)  
+  ### Subsection (H3)
+  ```
+
+  ### Text Formatting
+  ```markdown
+  **Bold text** for emphasis
+  *Italic text* for subtle emphasis
+  `inline code` for technical terms
+  ```
+
+  ### Links and Images
+  ```markdown
+  [Link text](https://example.com)
+  ![Image description](image.jpg)
+  ```
+
+  ### Lists
+  ```markdown
+  - Simple bullet point
+  - Another point
+  - Third point
+
+  1. Numbered list
+  2. Second item
+  3. Third item
+  ```
+
+  ### Code Blocks
+  ```markdown
+  ```javascript
+  function hello() {
+    console.log("Hello, world!");
+  }
+  ```
+  ```
+
+  ### Quotes
+  ```markdown
+  > This is a blockquote
+  > Perfect for highlighting important points
+  ```
+
+  ## 🏷️ YAML Front Matter Fields
+
+  ### Required Fields
+  - `id`: Unique identifier (no spaces, use dashes)
+  - `slug`: URL-friendly version of your title
+  - `title`: Your blog post title
+  - `content`: Your Markdown content (use `|` for multi-line)
+
+  ### Optional Fields
+  - `featured`: Set to `true` to highlight this post
+  - `excerpt`: Short description for previews
+  - `author`: Who wrote this post
+  - `date`: When it was published (YYYY-MM-DD)
+  - `tags`: List of relevant tags
+  - `readTime`: Estimated reading time
+
+  ## 📝 Writing Tips
+
+  ### Keep Your YAML Clean
+  ```yaml
+  # Good
+  title: How to Build a Website
+  
+  # Avoid special characters without quotes
+  title: "How to Build a Website: A Complete Guide!"
+  ```
+
+  ### Use the Pipe Symbol for Content
+  ```yaml
+  content: |
+    This preserves line breaks
+    and formatting in your
+    Markdown content.
+  ```
+
+  ### Organize Your Tags
+  ```yaml
+  tags:
+    - tutorial
+    - web-development
+    - beginner-friendly
+  ```
+
+  ## 🎯 Quick Example
+
+  Here's a complete, simple blog post:
+
+  ```yaml
+  id: coffee-brewing-guide
+  slug: coffee-brewing-guide
+  title: The Perfect Coffee Brewing Guide
+  excerpt: Learn how to brew amazing coffee at home with simple techniques.
+  author: Coffee Lover
+  date: 2024-07-30
+  tags:
+    - coffee
+    - lifestyle
+    - tutorial
+  readTime: 4 min
+  content: |
+    # The Perfect Coffee Brewing Guide
+
+    Making great coffee at home is easier than you think! Here are my top tips.
+
+    ## What You'll Need
+
+    - Good quality coffee beans
+    - Clean water
+    - Proper brewing equipment
+    - A little patience
+
+    ## The Process
+
+    1. **Grind your beans** just before brewing
+    2. **Heat water** to 200°F (just off boiling)
+    3. **Pour slowly** in circular motions
+    4. **Wait patiently** for 4-6 minutes
+
+    > **Pro tip**: The coffee-to-water ratio should be about 1:15
+
+    ## Final Thoughts
+
+    Great coffee is about consistency and quality ingredients. Practice makes perfect!
+
+    Happy brewing! ☕
+  ```
+
+  ## ✅ Best Practices
+
+  - Keep filenames simple: `my-post.yaml`
+  - Use consistent date format: `YYYY-MM-DD`
+  - Write clear, descriptive excerpts
+  - Tag posts consistently for better organization
+  - Preview your Markdown before publishing
+
+  ## 🚀 Ready to Start?
+
+  1. Create a new `.yaml` file in `src/blog-posts/`
+  2. Copy the basic structure above
+  3. Write your content in Markdown
+  4. Save the file
+  5. Your post appears automatically!
+
+  That's it! Your headless CMS handles the rest, turning your simple YAML file into a beautiful blog post.
+
+  ---
+
+  *Happy blogging! 📝*
