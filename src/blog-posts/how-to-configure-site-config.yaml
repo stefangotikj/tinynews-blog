@@ -1,0 +1,46 @@
+id: how-to-configure-site-config
+slug: how-to-configure-site-config
+featured: false
+title: How to Configure Your Blog with site-config.ts
+excerpt: Learn how to customize your blog’s title, logo, and more using the site-config.ts file.
+author: Tinynews Team
+date: 2024-07-16
+tags:
+  - configuration
+  - tutorial
+  - site-settings
+readTime: 6 min
+content: |
+  # How to Configure Your Blog with `site-config.ts`
+
+  Tinynews makes it easy to update your blog’s branding and settings from a single file: `src/site.config.ts`.
+
+  ## What is `site-config.ts`?
+
+  This file contains all your site’s global settings, like the title, logo, description, and blog page details.
+
+  ## Example
+
+  ```ts
+  export const siteConfig = {
+    title: "My Awesome Blog",
+    logo: "/favicon.png",
+    description: "Insights, tutorials, and stories from a curious mind.",
+    blogPageTitle: "Blog",
+    blogPageDescription: "Welcome to my blog! Here you'll find thoughts, guides, and inspiration.",
+    blogPageIcon: BookOpen,
+  };
+  ```
+
+  ## How to Use
+
+  1. **Edit the fields** to match your blog’s identity.
+  2. **Save the file**—your changes will appear instantly across your site.
+  3. **Add new fields** (like social links or author info) as needed.
+
+  ## Tips
+
+  - Use a unique logo for your brand.
+  - Update the description for better SEO.
+  - Change the blog page title or icon to fit your style.
+

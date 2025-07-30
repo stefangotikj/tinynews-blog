@@ -1,0 +1,50 @@
+id: managing-blog-post-metadata
+slug: managing-blog-post-metadata
+featured: false
+title: Managing Blog Post Metadata in Tinynews
+excerpt: Learn how to use YAML frontmatter to organize, tag, and feature your blog posts.
+author: Tinynews Team
+date: 2024-07-16
+tags:
+  - metadata
+  - yaml
+  - tutorial
+readTime: 5 min
+content: |
+  # Managing Blog Post Metadata in Tinynews
+
+  Every Tinynews post starts with a YAML frontmatter block. This metadata controls how your post appears and is organized.
+
+  ## Example Frontmatter
+
+  ```yaml
+  id: my-post
+  slug: my-post
+  featured: true
+  title: My Post Title
+  excerpt: A short summary of my post.
+  author: Your Name
+  date: 2024-07-16
+  tags:
+    - tutorial
+    - example
+  readTime: 4 min
+  ```
+
+  ## Field Explanations
+
+  - `id`: Unique identifier for the post (no spaces)
+  - `slug`: URL path for the post
+  - `featured`: Show this post as featured (true/false)
+  - `title`: The post’s title
+  - `excerpt`: Short summary for previews
+  - `author`: Who wrote the post
+  - `date`: Publication date (YYYY-MM-DD)
+  - `tags`: List of topics for filtering/search
+  - `readTime`: Estimated reading time
+
+  ## Tips
+
+  - Use clear, descriptive titles and excerpts.
+  - Tag your posts for better discoverability.
+  - Set `featured: true` for important posts. 
