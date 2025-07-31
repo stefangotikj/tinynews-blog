@@ -2,7 +2,9 @@
 
 ## ✍️ Creating Your First Post
 
-Blog posts are written in YAML format inside the `src/blog-posts/` directory. Each file represents a post.
+Blog posts are created as individual YAML files stored in the `src/blog-posts/` directory. Each YAML file represents a single blog post with structured metadata and Markdown content.
+
+Alternatively, you can create visually using the AdminPage available at `/admin`, which generates these YAML files for you.
 
 ### Example:
 
@@ -44,11 +46,13 @@ content: |
 
 ### Optional Fields
 
-* `excerpt`: Summary for previews
-* `featured`: `true` if highlighted on homepage
-* `author`: Name of the author
-* `tags`: List of tags for filtering
-* `readTime`: Estimated reading time
+These fields can be included in your YAML posts as needed. Their display can be toggled on or off in `site.config.ts` under the `display` settings.
+
+- `excerpt`: Summary for previews  
+- `featured`: Set to `true` if the post is highlighted on the homepage  
+- `author`: Name of the author  
+- `tags`: List of tags for filtering  
+- `readTime`: Estimated reading time  
 
 ## 🖌️ Styling & Customization
 
@@ -87,10 +91,6 @@ Place your images in `public/` and reference them like this:
 ![Alt text](/images/your-image.png)
 ```
 
-## 🔍 Adding Search
-
-You can add a simple search filter that loops over the posts array and matches title/tags/etc.
-
 ## 🛠️ Migration Tips
 
 To migrate from another platform:
@@ -99,5 +99,3 @@ To migrate from another platform:
 * Write a script to generate files in `src/blog-posts/`
 
 ---
-
-Next: [How to Deploy →](deployment.md)

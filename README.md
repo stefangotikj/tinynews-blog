@@ -11,7 +11,7 @@
 ## ✨ Key Features
 
 - ⚡ **Lightning Fast** – Static generation with instant loading
-- 📝 **YAML-Powered** – Write posts in structured YAML with Markdown content
+- 📝 **YAML-Powered & Visual Editor** – Write posts in structured YAML or create them easily with the new drag-and-drop Visual Editor
 - 🛠️ **Developer First** – TypeScript, modern tooling, Git-based workflow
 - 📱 **Responsive Design** – Beautiful on desktop, tablet, and mobile
 - 🌍 **Deploy Anywhere** – Works with Vercel, Netlify, GitHub Pages, and more
