@@ -10,7 +10,7 @@ import { siteConfig } from "./site.config";
 // Lazy load the Blog pages
 const BlogPage = lazy(() => import("./pages/BlogPage"));
 const BlogPostPage = lazy(() => import("./pages/BlogPostPage"));
-
+const AdminPage = lazy(() => import("./pages/AdminPage"));
 // Loading component
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -20,11 +20,14 @@ const PageLoader = () => (
 
 const queryClient = new QueryClient();
 
-const App = () => {
+function App() {
   const location = useLocation();
+  
   useEffect(() => {
     if (location.pathname.startsWith("/blog")) {
       document.title = `${siteConfig.blogPageTitle} | ${siteConfig.title}`;
+    } else if (location.pathname === "/admin") {
+      document.title = `Admin | ${siteConfig.title}`;
     } else {
       document.title = siteConfig.title;
     }
@@ -36,27 +39,32 @@ const App = () => {
         <Toaster />
         <Sonner />
         <Routes>
-            {/* 👇 Default route shows BlogPage */}
-            <Route path="/" element={
-              <Suspense fallback={<PageLoader />}>
-                <BlogPage />
-              </Suspense>
-            } />
-            <Route path="/blog" element={
-              <Suspense fallback={<PageLoader />}>
-                <BlogPage />
-              </Suspense>
-            } />
-            <Route path="/blog/:id" element={
-              <Suspense fallback={<PageLoader />}>
-                <BlogPostPage />
-              </Suspense>
-            } />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          {/* Default route shows BlogPage */}
+          <Route path="/" element={
+            <Suspense fallback={<PageLoader />}>
+              <BlogPage />
+            </Suspense>
+          } />
+          <Route path="/blog" element={
+            <Suspense fallback={<PageLoader />}>
+              <BlogPage />
+            </Suspense>
+          } />
+          <Route path="/blog/:id" element={
+            <Suspense fallback={<PageLoader />}>
+              <BlogPostPage />
+            </Suspense>
+          } />
+          <Route path="/admin" element={
+            <Suspense fallback={<PageLoader />}>
+              <AdminPage />
+            </Suspense>
+          } />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </TooltipProvider>
     </QueryClientProvider>
   );
-};
+}
 
 export default App;
