@@ -103,7 +103,7 @@ export const siteConfig: SiteConfig = {
   // ===== FEATURE TOGGLES =====
   features: {
     enableSearch: true, // Set to false to completely disable search
-    enableTags: false, // Set to false to hide tag filtering
+    enableTags: true, // Set to false to hide tag filtering
     enableRelatedPosts: false, // Set to false to hide related posts
     enableReadingTime: false, // Set to false to hide reading time
     enableBackToTop: true,
@@ -111,11 +111,11 @@ export const siteConfig: SiteConfig = {
   
   // ===== DISPLAY SETTINGS =====
   display: {
-    showFeaturedPosts: true,        // Set to false to hide featured posts section **IMPORTANT**: Remove featured posts from the blog page if set to false
-    showPostDates: false,            // Set to false to hide publication dates
-    showPostAuthors: false,          // Set to false to hide author names
-    showPostTags: false,             // Set to false to hide post tags
-    showPostExcerpts: true,         // Set to false to hide post excerpts
+    showFeaturedPosts: true, // Set to false to hide featured posts section **IMPORTANT**: Remove featured posts from the blog page if set to false
+    showPostDates: true, // Set to false to hide publication dates
+    showPostAuthors: true, // Set to false to hide author names
+    showPostTags: true, // Set to false to hide post tags
+    showPostExcerpts: false,
   },
   
   // ===== SOCIAL MEDIA LINKS =====
