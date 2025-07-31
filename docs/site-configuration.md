@@ -1,6 +1,8 @@
 # Site Configuration
 
-This document explains the various site configuration options available in `src/site.config.ts`.
+This document outlines the site configuration options in `src/site.config.ts`.
+
+Additionally, this file controls which fields are enabled or disabled in the YAML creation process via `src/pages/AdminPage.tsx`, directly affecting the fields displayed in the AdminPage UI.
 
 ## Basic Site Information
 
