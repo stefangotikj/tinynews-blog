@@ -45,6 +45,7 @@ All blog behavior and features can be modified through configuration files and c
 *   [Blog Posts](docs/blog-posts.md): How to create and manage blog posts.
 *   [Contributing](docs/contributing.md): Guidelines for contributing to the project.
 *   [License](docs/license.md): License information.
+  
 
 
 ## 📝 Best Practices
